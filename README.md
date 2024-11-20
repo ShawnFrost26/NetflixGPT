@@ -76,6 +76,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 2. Configure Tailwind
 3. Header
 4. login form
+5. Signup form
 
 
 # Features

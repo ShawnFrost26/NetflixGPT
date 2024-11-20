@@ -1,13 +1,61 @@
-import Header from "./Header"
+import { useState } from "react";
+import Header from "./Header";
 
 const Login = () => {
-  return (
-    <><Header />
-    <div>
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_large.jpg" alt="backgrpond-image" />
-    </div>
-    </>
-  )
-}
+  const [isSignInForm, setIsSignInForm] = useState(true);
 
-export default Login
+  const toggleSignInForm = () => {
+    setIsSignInForm(!isSignInForm);
+  };
+  return (
+    <>
+      <Header />
+      <div className="absolute">
+        <img
+          src="https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_large.jpg"
+          alt="background-image"
+        />
+      </div>
+      <form className="bg-black p-12 absolute w-1/3 my-36 mx-auto right-0 left-0 text-white rounded-md bg-opacity-80">
+        <h1 className="font-bold text-3xl py-4">
+          {isSignInForm ? "Sign In" : "Sign Up"}
+        </h1>
+        {!isSignInForm && <input
+          type="text"
+          placeholder="Enter your name"
+          className="p-4 my-2 w-full  bg-gray-800 rounded-md bg-opacity-80"
+        />}
+        <input
+          type="text"
+          placeholder="Enter your email"
+          className="p-4 my-2 w-full  bg-gray-800 rounded-md bg-opacity-80"
+        />
+        <input
+          type="password"
+          placeholder="Enter your password"
+          className="p-4 my-2 w-full  bg-gray-800 rounded-md bg-opacity-80"
+        />
+        <button className="bg-red-700 w-full p-4 my-4 rounded-md bg-opacity-80">
+          {isSignInForm ? "Sign In" : "Sign Up"}
+        </button>
+        {isSignInForm ? (
+          <p className="py-4">
+            New to Netflix?{" "}
+            <strong className="cursor-pointer" onClick={toggleSignInForm}>
+              Sign up now.
+            </strong>
+          </p>
+        ) : (
+          <p className="py-4">
+            Already a user?{" "}
+            <strong className="cursor-pointer" onClick={toggleSignInForm}>
+              Sign in now.
+            </strong>
+          </p>
+        )}
+      </form>
+    </>
+  );
+};
+
+export default Login;
