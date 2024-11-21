@@ -81,6 +81,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 7. useRef hook
 8. Firebase setup
 9. Deploy to production
+10. Create signup user account in firebase
 
 
 # Features
