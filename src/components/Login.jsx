@@ -6,11 +6,13 @@ const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
+    setErrorMessage(null)
   };
 
   const handleButtonClick = (e) => {
@@ -18,9 +20,22 @@ const Login = () => {
     // checkValidData(email, password);
     // console.log(email.current.value);
     // console.log(password.current.value);
-
-    const message = checkValidData(email.current.value, password.current.value);
-    setErrorMessage(message);
+    let message;
+    if (!isSignInForm) {
+      message = checkValidData(
+        name.current.value,
+        email.current.value,
+        password.current.value
+      );
+      setErrorMessage(message);
+    } else {
+      message = checkValidData(
+        null,
+        email.current.value,
+        password.current.value
+      );
+      setErrorMessage(message);
+    }
   };
   return (
     <>
@@ -40,6 +55,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
+            ref={name}
             type="text"
             placeholder="Enter your name"
             className="p-4 my-2 w-full  bg-gray-800 rounded-md bg-opacity-80"
