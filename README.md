@@ -77,6 +77,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 3. Header
 4. login form
 5. Signup form
+6. Form validation
+7. useRef hook
 
 
 # Features
