@@ -13,6 +13,8 @@
 9. Deploy to production
 10. Create signup user account in firebase
 11. created redux store with userSlice
+12. implemented signout
+13. updated profile
 
 # Features
 
