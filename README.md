@@ -15,6 +15,8 @@
 11. created redux store with userSlice
 12. implemented signout
 13. updated profile
+14. bug fix - if user not logged in, and visits /browse, it will redirect to login page.
+            - if user logged in, and visits login page, it will redirect to /browse page.
 
 # Features
 
