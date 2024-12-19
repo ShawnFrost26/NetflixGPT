@@ -17,6 +17,8 @@
 13. updated profile
 14. bug fix - if user not logged in, and visits /browse, it will redirect to login page.
             - if user logged in, and visits login page, it will redirect to /browse page.
+15. Register for TMDB Api & create an app & get the access token
+16. get data from now playing movies api
 
 # Features
 
