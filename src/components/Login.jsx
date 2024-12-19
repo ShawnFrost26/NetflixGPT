@@ -9,6 +9,7 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { user_avatar } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -54,12 +55,14 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
+          
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://cdn-icons-png.flaticon.com/128/1144/1144709.png",
+            photoURL: user_avatar,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
+              
               dispatch(
                 addUser({
                   uid: uid,
@@ -102,7 +105,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/03ad76d1-e184-4d99-ae7d-708672fa1ac2/web/IN-en-20241111-TRIFECTA-perspective_149877ab-fcbd-4e4f-a885-8d6174a1ee81_large.jpg"
+          src="https://assets.nflxext.com/ffe/siteui/vlv3/729ce5c2-d831-436a-8c9d-f38fea0b99b3/web/IN-en-20241209-TRIFECTA-perspective_4aef76eb-7d5b-4be0-93c0-5f67320fd878_large.jpg"
           alt="background-image"
         />
       </div>
