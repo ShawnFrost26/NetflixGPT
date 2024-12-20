@@ -22,7 +22,11 @@
 17. Two containers for browse page
       - MainContainer.jsx
       - SecondaryContainer.jsx
-
+18. created custom hooks for now playing movies
+19. Created movieSlice
+20. fetch data for trailer video
+21. update store with trailer video data
+22. Embedded youtube video and make it autoplay & mute
 
 # Features
 
