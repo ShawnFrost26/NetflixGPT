@@ -19,6 +19,10 @@
             - if user logged in, and visits login page, it will redirect to /browse page.
 15. Register for TMDB Api & create an app & get the access token
 16. get data from now playing movies api
+17. Two containers for browse page
+      - MainContainer.jsx
+      - SecondaryContainer.jsx
+
 
 # Features
 
