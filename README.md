@@ -27,6 +27,8 @@
 20. fetch data for trailer video
 21. update store with trailer video data
 22. Embedded youtube video and make it autoplay & mute
+23. build secondary container
+24. build movie list and movie card
 
 # Features
 
