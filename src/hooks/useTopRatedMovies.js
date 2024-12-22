@@ -12,7 +12,7 @@ const useTopRatedMovies = () => {
 
     const data = await fetch(url, API_OPTIONS);
     const json = await data.json();
-    // console.log("popular:::",json.results);
+    // console.log("top rated:::",json.results);
     dispatch(addTopRatedMovies(json.results));
   };
 
