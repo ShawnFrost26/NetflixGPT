@@ -29,6 +29,9 @@
 22. Embedded youtube video and make it autoplay & mute
 23. build secondary container
 24. build movie list and movie card
+25. TMDB image CDN URL
+26. Fixed UI - Tailwind CSS
+27. Custom hooks
 
 # Features
 
