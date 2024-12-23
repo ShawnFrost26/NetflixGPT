@@ -32,6 +32,10 @@
 25. TMDB image CDN URL
 26. Fixed UI - Tailwind CSS
 27. Custom hooks
+28. GPT Search Feature
+29. gpt search page
+30. gpt search bar
+31. multi language feature in gpt search page
 
 # Features
 
