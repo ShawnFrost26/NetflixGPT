@@ -36,6 +36,15 @@
 29. gpt search page
 30. gpt search bar
 31. multi language feature in gpt search page
+32. get openai key
+33. gpt search api call
+34. gemini api
+35. fetched gptMovieSuggestion from tmdb
+36. created gpt slice
+37. reused moviList component
+38. Memiozation
+39. added .env file
+40. fixed css
 
 # Features
 
