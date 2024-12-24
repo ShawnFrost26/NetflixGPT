@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* For WebKit browsers (e.g., Chrome, Safari) */
+.flex::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* For Firefox */
+  .flex {
+    scrollbar-width: none; /* hides the scrollbar */
+  }
+  
+  /* General fallback */
+  .flex {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
