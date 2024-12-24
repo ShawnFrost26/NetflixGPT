@@ -3,16 +3,17 @@
 @tailwind utilities;
 
 /* For WebKit browsers (e.g., Chrome, Safari) */
-.flex::-webkit-scrollbar {
+/* .flex::-webkit-scrollbar {
     display: none;
-  }
+  } */
   
   /* For Firefox */
-  .flex {
-    scrollbar-width: none; /* hides the scrollbar */
-  }
+  /* .flex {
+    scrollbar-width: none; 
+  } 
+  */
   
   /* General fallback */
-  .flex {
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-  }
+  /* .flex {
+    -ms-overflow-style: none; 
+  } */
