@@ -104,16 +104,16 @@ const Login = () => {
     <>
       <Header />
       <div className="absolute">
-        <img
+        <img className="h-screen object-cover md:h-full"  
           src={BG_URL}
           alt="background-image"
         />
       </div>
       <form
-        className="bg-black p-12 absolute w-1/3 my-36 mx-auto right-0 left-0 text-white rounded-md bg-opacity-80"
+        className="w-full bg-black p-12 mt-20 absolute md:w-1/3 md:my-36 md:mx-auto right-0 left-0 text-white rounded-md bg-opacity-80"
         onSubmit={(e) => e.preventDefault()}
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-xl md:text-3xl md:py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (
@@ -144,14 +144,14 @@ const Login = () => {
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         {isSignInForm ? (
-          <p className="py-4">
+          <p className="py-2  md:py-4">
             New to Netflix?{" "}
             <strong className="cursor-pointer" onClick={toggleSignInForm}>
               Sign up now.
             </strong>
           </p>
         ) : (
-          <p className="py-4">
+          <p className="py-2 md:py-4">
             Already a user?{" "}
             <strong className="cursor-pointer" onClick={toggleSignInForm}>
               Sign in now.
