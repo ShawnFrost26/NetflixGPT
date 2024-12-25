@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import openai from "../utils/openai";
 import model from "../utils/gemini";
 import { API_OPTIONS } from "../utils/constants";
@@ -10,6 +10,7 @@ const GptSearchBar = () => {
   const dispatch = useDispatch();
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
+  const [loading, setLoading] = useState(false)
 
   //search movie in tmdb
   const searchMovieTMDB = async (movie) => {
@@ -24,6 +25,7 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
+    setLoading(true)
     // console.log(searchText.current.value);
     //make an api call to gpt api and get movie results
 
@@ -54,6 +56,7 @@ const GptSearchBar = () => {
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
     );
+    setLoading(false)
   };
 
   return (
@@ -69,10 +72,12 @@ const GptSearchBar = () => {
           placeholder={lang[langKey].gptSearchPlaceholder}
         />
         <button
-          className="py-2 px-4 m-4 ml-0 bg-red-700 text-white rounded-lg col-span-4 md:col-span-3"
+          className={`py-2 px-4 m-4 ml-0 bg-red-700 text-white rounded-lg col-span-4 md:col-span-3 ${
+            loading ? "opacity-50 cursor-not-allowed" : ""
+          }`}
           onClick={handleGptSearchClick}
         >
-          {lang[langKey].search}
+          {loading ? "Searching..." : lang[langKey].search}
         </button>
       </form>
     </div>
