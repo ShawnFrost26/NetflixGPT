@@ -1,8 +1,18 @@
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
+import { useEffect, useState } from "react";
+import Shimmer from "./Shimmer";
 
 const GptMovieSuggestions = () => {
   const { movieResults, movieNames } = useSelector((store) => store.gpt);
+  const [loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    if (movieResults) setLoading(false);
+  }, [movieResults]);
+
+  if (loading) return <Shimmer />;
 
   if (!movieNames) return null;
 
