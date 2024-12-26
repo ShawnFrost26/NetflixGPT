@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 // import openai from "../utils/openai";
 import model from "../utils/gemini";
 import { API_OPTIONS } from "../utils/constants";
