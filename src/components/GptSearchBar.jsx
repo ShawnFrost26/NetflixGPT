@@ -1,16 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import lang from "../utils/languageConstants";
 import { useRef, useState } from "react";
-import openai from "../utils/openai";
+// import openai from "../utils/openai";
 import model from "../utils/gemini";
 import { API_OPTIONS } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
 
-const GptSearchBar = () => {
+const GptSearchBar = ({ setLoading, loading }) => {
   const dispatch = useDispatch();
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
-  const [loading, setLoading] = useState(false)
 
   //search movie in tmdb
   const searchMovieTMDB = async (movie) => {
@@ -25,8 +24,7 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-    setLoading(true)
-    // console.log(searchText.current.value);
+    setLoading(true);
     //make an api call to gpt api and get movie results
 
     const gptQuery =
@@ -56,7 +54,7 @@ const GptSearchBar = () => {
     dispatch(
       addGptMovieResult({ movieNames: gptMovies, movieResults: tmdbResults })
     );
-    setLoading(false)
+    setLoading(false);
   };
 
   return (
